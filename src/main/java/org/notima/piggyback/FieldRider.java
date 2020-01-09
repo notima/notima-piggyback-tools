@@ -51,12 +51,14 @@ public class FieldRider {
 	public FieldRider() {}
 	
 	/**
-	 * Creates a new FieldRider instance with given content.
+	 * Creates a new FieldRider instance with given content, parses the content
+	 * and sets the key value pairs.
 	 * 
 	 * @param fieldContent		The contents of the field.
 	 */
 	public FieldRider(String fieldContent) {
 		content = new StringBuffer(fieldContent);
+		setKeyValuePairs(parseContent());
 	}
 
 	public String getDefaultFieldIndicator() {
@@ -106,6 +108,18 @@ public class FieldRider {
 		
 	}
 
+	/**
+	 * Adds a key value pair to this instance.
+	 * 
+	 * @param kvp		The key value pair to add
+	 */
+	public void addKeyValuePair(FieldRiderKeyValuePair kvp) {
+		if (keyValuePairs==null) {
+			keyValuePairs = new ArrayList<FieldRiderKeyValuePair>();
+		}
+		keyValuePairs.add(kvp);
+	}
+	
 	/**
 	 * Lookup key value pair.
 	 * 
@@ -200,6 +214,23 @@ public class FieldRider {
 		return fieldIndexes;
 	}
 	
+	/**
+	 * Returns current settings as a map with keys as keys and values as values.
+	 * 
+	 * @return	A map of settings.
+	 */
+	public Map<String, String> getSettingsMap() {
+		
+		Map<String, String> result = new TreeMap<String,String>();
+		
+		updateKeys(true);
+		
+		for (String key : keys.keySet()) {
+			result.put(key, keys.get(key).getValue());
+		}
+		
+		return result;
+	}
 	
 	/**
 	 * Parses the content for free riding key-value pairs
