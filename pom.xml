@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.notima</groupId>
   <artifactId>piggyback-tools</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>Notima Piggyback Tools</name>
   
 	<distributionManagement>
@@ -89,7 +89,7 @@
 				<executions>
 					<execution>
 						<id>sign-artifacts</id>
-						<phase>deploy</phase>
+						<phase>verify</phase>
 						<goals>
 							<goal>sign</goal>
 						</goals>
@@ -97,10 +97,8 @@
 				</executions>
 			</plugin>
 
-
 		</plugins>
 	</build>
-
 
 	<dependencies>
 
@@ -166,4 +164,5 @@
 	</developers>
   
   
+	<description>Library to embed settings in other fields.</description>
 </project>
