@@ -78,6 +78,7 @@
 						<Export-Package>
 							org.notima.piggyback
 						</Export-Package>
+						<Embed-Dependency>artifactId=blowfishj;scope=compile|runtime</Embed-Dependency>
 					</instructions>
 				</configuration>
 			</plugin>
