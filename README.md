@@ -9,7 +9,7 @@ Include the following in your pom.xml
 <dependency>
   <groupId>org.notima</groupId>
   <artifactId>piggyback-tools</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.3</version>
 </dependency>
 ```
 
