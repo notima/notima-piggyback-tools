@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.notima</groupId>
   <artifactId>piggyback-tools</artifactId>
-  <version>0.0.3</version>
+  <version>0.0.4-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>Notima Piggyback Tools</name>
   

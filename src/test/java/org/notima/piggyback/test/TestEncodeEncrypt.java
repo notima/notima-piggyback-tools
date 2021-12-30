@@ -2,7 +2,7 @@ package org.notima.piggyback.test;
 
 /**
  * 
- * Copyright 2020 Notima System Integration AB (Sweden)
+ * Copyright 2020-2022 Notima System Integration AB (Sweden)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -58,13 +58,12 @@ public class TestEncodeEncrypt extends PiggybackTest {
 			
 			messageToEncrypt = new String (Files.readAllBytes(Paths.get(url.getFile())));
 			
-			EncodeEncryptUtil eeu = new EncodeEncryptUtil();
-			result = eeu.encrypt(TEST_KEY, messageToEncrypt);
+			result = EncodeEncryptUtil.encrypt(TEST_KEY, messageToEncrypt);
 
 			log.info("Encrypted Message:\n{}", result);
 			log.info("Length of encrypted message: {}", result.length());
 			
-			String backAgain = eeu.decrypt(TEST_KEY, result);
+			String backAgain = EncodeEncryptUtil.decrypt(TEST_KEY, result);
 			
 			log.info("Decrypted message:\n{}", backAgain);
 			
